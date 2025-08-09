@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hi, my name is Dante</title>
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <style>
         html{
             scroll-behavior: smooth;
@@ -38,6 +42,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             font-size: 30px;
             font-weight: 700;
+            transition: background-color 0.3s ease;
         }
         .hero button:hover{
             color: rgb(32, 125, 239);
@@ -78,7 +83,6 @@
             font-family: sans-serif;
             font-size: xx-large;
             font-weight: bolder;
-            backdrop-filter: blur(3px);
         }
         .sekolah-header{
             padding-top: 6px;
@@ -109,7 +113,7 @@
             border-radius: 15px;
             width: 100%;
             margin-bottom: 70px;
-            box-shadow: 0 0 30px 2px black;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
         .sekolah-deskripsi1{
             flex-direction: column;
@@ -126,7 +130,7 @@
             border-radius: 15px;
             width: 100%;
             margin-bottom: 40px;
-            box-shadow: 0 0 30px 2px black;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
         .sekolah-deskripsi2{
             flex-direction: column;
@@ -164,18 +168,28 @@
         }
         
 
-        
-        .lanjutan{
+        .info{
             margin: 21px;
-            margin-top: 83px;
+            margin-top: 100px;
+            margin-bottom: 100px;
+        }
+        .lanjutan{
+            
             display:flex;
-            gap: 5%;
+            gap: 4%;
             justify-content: center;
-            margin-bottom: 10%;
+            margin-bottom: 30px;
+        }
+        .card1, .card2, .card3, .card4{
+            transition: transform 0.3s ease;
+        }
+        .card1:hover, .card2:hover, .card3:hover, .card4:hover{
+            transform: translateY(-8px);
         }
         .lanjutan-kiri{
+            background-color: #f9f9f9;
             width: 50%;
-            box-shadow: 0 0 30px 1px black;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
             border-radius: 20px;
         }
         .lanjutan-kiri h1{
@@ -188,8 +202,9 @@
             font-family: sans-serif;
         }
         .lanjutan-kanan{
+            background-color: #f9f9f9;
             width: 50%;
-            box-shadow: 0 0 30px 1px black;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
             border-radius: 20px;
         }
         .lanjutan-kanan h1{
@@ -218,11 +233,11 @@
             margin: 0 auto;
         }
 
-        .footer-links{
+        .footer-kontak{
             margin-bottom: 1.5%;
         }
 
-        .footer-links a{
+        .footer-kontak a{
             color: white;
             text-decoration: none;
             margin: 0 2%;
@@ -261,19 +276,121 @@
         .about-deskripsi p{
             display: block;
         }
-        @media screen and (max-width: 900px){
-            .hero{
-                display: block;
+        .info{
+            display: block ;
+        }
+        i{
+            font-size: xx-large;
+        }
+
+
+
+
+        @media screen and (max-width: 768px){
+            .hero-page1{
+                flex-direction: column;
+                text-align: center;
+                padding: 40px 20px;
             }
+            
+            .hero-gambar img{
+                width: 200px;
+                height: 200px;
+            }
+            
+            .hero-sapa h1{
+                font-size: 2.5rem;
+            }
+            
+            .hero-sapa h2{
+                font-size: 1.5rem;
+            }
+
+            .hero button{
+                max-width: 250px;
+                height: 45px;
+                font-size: 16px;
+            }
+
+            .sekolah-sekolah1, .sekolah-sekolah2{
+                flex-direction: column;
+            }
+
+            .sekolah-asal img{
+                border-radius: 10px 10px 0 0;
+                width: initial;
+            }
+
+            .sekolah-deskripsi1, .sekolah-deskripsi2{
+                border-radius: 0 0 10px 10px;
+            }
+
+            .sekolah-deskripsi1 h1, .sekolah-deskripsi2 h1{
+                border-radius: 0;
+            }
+
             .lanjutan{
                 flex-direction: column;
                 align-items: center;
                 gap: 40px;
+                margin: 40px 20px;
+            }
+            
+            .lanjutan-kiri, .lanjutan-kanan{
+                width: 100%;
+                max-width: 500px;
+            }
+
+            .about{
+                flex-direction: column;
+                text-align: center;
+                margin: 40px 20px;
+            }
+            .about-deskripsi-p{
+                text-align: initial;
+            }
+            .about-deskripsi-header{
+                font-size: 2rem;
+            }
+
+            .footer-links a{
+                margin: 5px;
             }
             .about{
                 height: auto;
-                display: block;
             }
+            .about img{
+                width: 300px;
+            }
+            .sekolah-header{
+                border-radius: 0;
+                width: initial;
+            }
+            i{
+                font-size: x-large;
+            }
+        }
+
+
+        @media screen and (max-width: 480px){
+
+            .hero-sapa h1{
+                font-size: 2rem;
+            }
+            .hero-sapa h2{
+                font-size: 1.2rem;
+            }
+            .about-deskripsi-header{
+                font-size: 1.5rem;
+            }
+            .lanjutan{
+                margin: 20px 15px;
+                margin-top: 40px;
+            }
+            i{
+                font-size: large;
+            }
+            
         }
 
     </style>
@@ -304,7 +421,7 @@
 
     </div>
     
-    <div class="about">
+    <div class="about"  id="target">
         
         <div class="about-foto">
             <img src="assets/img/Bill-Gates-2011.jpg" alt="">
@@ -319,13 +436,18 @@
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. In itaque pariatur suscipit odio hic, aliquam illum corporis,<br> officia cupiditate libero, earum officiis totam necessitatibus nobis ullam facere dolorum? Explicabo, optio!
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis qui repudiandae velit accusamus mollitia facilis, tempore natus eum explicabo dolorum temporibus, culpa et atque quisquam dicta. Minus maxime quis enim?
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt pariatur expedita molestiae corporis culpa nostrum id nesciunt beatae dolore illo quaerat voluptas <br> iusto illum, odit molestias tenetur repudiandae cum. Porro.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum at eligendi iure voluptatibus iste atque in repudiandae? Dolorum aperiam unde commodi numquam autem? Nobis vitae consectetur veritatis dolorem pariatur praesentium!
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum at eligendi iure voluptatibus iste atque in repudiandae? Dolorum aperiam unde commodi numquam autem? Nobis vitae consectetur veritatis dolorem pariatur praesentium! Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, rem commodi. Sint eaque modi pariatur magni
                 </p>
                 <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. In itaque pariatur suscipit odio hic, aliquam illum corporis,<br> officia cupiditate libero, earum officiis totam necessitatibus nobis ullam facere dolorum? Explicabo, optio!
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis qui repudiandae velit accusamus mollitia facilis, tempore natus eum explicabo dolorum temporibus, culpa et atque quisquam dicta. Minus maxime quis enim?
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt pariatur expedita molestiae corporis culpa nostrum id nesciunt beatae dolore illo quaerat voluptas <br> iusto illum, odit molestias tenetur repudiandae cum. Porro.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum at eligendi iure voluptatibus iste atque in repudiandae? Dolorum aperiam unde commodi numquam autem? Nobis vitae consectetur veritatis dolorem pariatur praesentium!
+                    Nama : Dante Sauza
+                    <br>
+                    Nomor WA : 0865456765434
+                    <br>
+                    Gmail : dantesauza@gmail.com
+                    <br>
+                    Instagram : @dntesauza
+                    <br>
+                    Pendidikan terakhir : S3 Oxford university (percaya plis)
                 </p>
             </div>
         </div>
@@ -334,7 +456,7 @@
 
     <div class="sekolah">
 
-        <div class="sekolah-header" id="target">
+        <div class="sekolah-header">
             <h1>RIWAYAT PENDIDIKAN</h1>
         </div>
 
@@ -369,32 +491,55 @@
         </div>
     </div>
 
-    <div class="lanjutan">
+    <div class="info">
 
-        <div class="lanjutan-kiri">
-            <h1>SKILL</h1>
-            <p><strong>1.</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit exercitationem</p>
-            <p><strong>2.</strong> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio non illo molestiae modi nulla</p>
-            <p><strong>3.</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum tenetur dignissimos</p>
-        </div>
+        <div class="lanjutan">
 
-        <div class="lanjutan-kanan">
-            <h1>PENGALAMAN</h1>
-            <p><strong>1.</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit exercitationem</p>
-            <p><strong>2.</strong> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio non illo molestiae modi nulla</p>
-            <p><strong>3.</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum tenetur dignissimos</p>
+            <div class="lanjutan-kiri card1">
+                <h1>SKILL</h1>
+                <p><strong>1.</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit exercitationem</p>
+                <p><strong>2.</strong> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio non illo molestiae modi nulla</p>
+                <p><strong>3.</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum tenetur dignissimos</p>
+            </div>
+    
+            <div class="lanjutan-kanan card2">
+                <h1>PENGALAMAN</h1>
+                <p><strong>1.</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit exercitationem</p>
+                <p><strong>2.</strong> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio non illo molestiae modi nulla</p>
+                <p><strong>3.</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum tenetur dignissimos</p>
+            </div>
+    
         </div>
+        
+        <div class="lanjutan">
+
+            <div class="lanjutan-kiri card3">
+                <h1>PROJEK</h1>
+                <p><strong>1.</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit exercitationem</p>
+                <p><strong>2.</strong> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio non illo molestiae modi nulla</p>
+                <p><strong>3.</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum tenetur dignissimos</p>
+            </div>
+    
+            <div class="lanjutan-kanan card4">
+                <h1>PRESTASI</h1>
+                <p><strong>1.</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit exercitationem</p>
+                <p><strong>2.</strong> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio non illo molestiae modi nulla</p>
+                <p><strong>3.</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum tenetur dignissimos</p>
+            </div>
+    
+        </div>
+        
 
     </div>
-
+    
 
     <footer>
         <div class="footer-isi">
-            <div class="footer-links">
-                <a href="#tentang">Tentang</a>
-                <a href="#layanan">Layanan</a>
-                <a href="#kontak">Kontak</a>
-                <a href="#kebijakan">Kebijakan</a>
+            <div class="footer-kontak">
+                <a href=""><i class="fab fa-whatsapp"></i></a>
+                <a href=""><i class="fab fa-instagram"></i></a>
+                <a href="#kontak"><i class="fab fa-youtube"></i></a>
+                <a href="#kebijakan"><i class="fab fa-facebook"></i></a>
             </div>
             <div class="footer-copyright">
                 <p>&copy; 2025 Website Portofolio Dante Sauza. Tugas.</p>
